@@ -61,7 +61,7 @@ class Form extends Component {
               console.log('handleimage');
               uploadImage(event)}} />
             <br />
-            <button className="formInput" id="submitInput" type="submit" onClick={() => {
+            <button className="formInput" id="submitInput" onClick={() => {
               console.log('POST DATA =>>>>>>>>>>>>>>>', postData);
               createNewListing(postData)}}>Submit</button>
             <button className="formInput" id="closeInput" type="button" onClick={toggleForm}>Close</button>

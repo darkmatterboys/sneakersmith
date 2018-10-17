@@ -148,3 +148,38 @@ export const createNewListing = (postData) => {
       })
   }
 };
+
+export const updateLoginUsername = event => ({
+  type: types.UPDATE_LOGIN_USERNAME,
+  payload: event,
+});
+
+export const updateLoginPassword = event => ({
+  type: types.UPDATE_LOGIN_PASSWORD,
+  payload: event,
+});
+
+export const updateLoginUser = (data) => ({
+  type: types.UPDATE_LOGIN_USER,
+  payload: data
+});
+
+// export const verifyUser = () => {
+//   return function (dispatch) {
+//     return fetch('/login' {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json; charset=utf-8',
+//       },
+//       body: JSON.stringify({ username, password }),
+//     })
+//       .then((res) => {
+//         console.log('Login successful.', res);
+//         dispatch(updateLoginUser(res));
+//       })
+//       .catch((err) => {
+//         // alert('Login failed.');
+//         console.log('Login failed.', err);
+//     })
+//   }
+// }

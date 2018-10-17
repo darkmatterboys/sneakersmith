@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Navigation from './components/Navigation';
@@ -12,7 +13,7 @@ class App extends Component {
     super(props);
     this.state = {
       isLoggedIn: false,
-      userProfile: { username: "", email: "" }
+      userProfile: { username: '', email: '' },
     };
 
     this.updateLoggedInStatus = this.updateLoggedInStatus.bind(this);
@@ -31,7 +32,7 @@ class App extends Component {
 
   render() {
     const { isLoggedIn, userProfile } = this.state;
-
+    
     return (
       <BrowserRouter>
         <div>

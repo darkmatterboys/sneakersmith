@@ -14,11 +14,12 @@ const initialState = {
   filterBy: '',
   isLoggedin: false,
   formToggleState: false,
+  loginCredentials: { username: '', passowrd: '' },
+  loggedInUser: '',
 };
 
 export default function (previousState = initialState, action) {
   let stateCopy;
-
   switch (action.type) {
     case types.TOGGLE_POPUP: {
       stateCopy = Object.assign({}, previousState);
