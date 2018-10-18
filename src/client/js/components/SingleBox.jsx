@@ -30,6 +30,8 @@ class SingleBox extends Component {
 
     return (
       <div className="singleBox">
+                {/* <button type="button" className="fas fa-heart"></button> */}
+          <button type="button" className="far fa-heart heartbtn"></button>
         <div className="singlebox-img-wrapper">
         {/* uid, title, brand, condition, size, price, imgurl */}
          <img className="imgBox" src={imgurl} alt="shoe-img" />
@@ -42,8 +44,6 @@ class SingleBox extends Component {
           <h5 className="singlebox-price">{'$' + price}</h5>
         </div>
         <div className="singlebox-btn-wrapper">
-          <button type="button" className="fas fa-heart"></button>
-          <button type="button" className="far fa-heart"></button>
           <button type="button" className="btn btn-outline-primary singlebox-showdetail-btn" onClick={() => togglePopup(key)}>Show more details</button>
         </div>
         {popupDisplay}
@@ -58,39 +58,34 @@ const Popup = (props) => {
   const { togglePopup } = props;
 
   return (
-    <div className="popup">
-      <img className="innerImgBox" src={imgurl} />
-      <h4>
-        user:
-        {' '}
-        {user}
-      </h4>
-      <h4>
-        brand:
-        {' '}
-        {brand}
-      </h4>
-      <h4>
-        title:
-        {' '}
-        {title}
-      </h4>
-      <h4>
-        price:
-        {' $'}
-        {price}
-      </h4>
-      <h4>
-        size:
-        {' '}
-        {size}
-      </h4>
-      <h4>
-        condition:
-        {' '}
-        {condition}
-      </h4>
-      <button className="navButton" type="button" onClick={() => togglePopup(key)}>Back</button>
+    <div id="popup-container">
+      <div id="popup" class="modal-dial">
+        <div id="detail-left">
+          <img class="innerImgBox" src={imgurl} />
+        </div>
+        <div id="detail-right">
+          <table id="detail-table">
+            <tr>
+              <td>User: </td><td>{user}</td>
+            </tr>
+            <tr>
+              <td>Brand:</td><td>{brand}</td>
+            </tr>
+            <tr>
+              <td>Title:</td><td>{title}</td>
+            </tr>
+            <tr>
+              <td>Price:</td><td>{price}</td>
+            </tr>
+            <tr>
+              <td>size:</td><td>{size}</td>
+            </tr>
+            <tr>
+              <td>condition:</td><td>{condition}</td>
+            </tr>
+          </table>
+        </div>
+      <button class="btn-lg btn-outline-primary popup-close-btn" type="button" onClick={() => togglePopup(key)}>Back</button></div>
     </div>
   );
 };

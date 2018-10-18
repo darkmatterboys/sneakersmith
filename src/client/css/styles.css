@@ -1,5 +1,5 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css');
-@import url('https://fonts.googleapis.com/css?family=Anton|Oxygen|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Anton|Oxygen|Roboto|Roboto+Condensed');
 body {
   margin: 0;
   padding: 0;
@@ -35,6 +35,7 @@ button {
   vertical-align: middle;
 }
 .singleBox{
+  position: relative;
   flex-grow: 1;
   background: white;
   width: 350px;
@@ -56,7 +57,6 @@ button {
   justify-content: center;
   align-items: center;
 }
-
 div.loginContainer {
   background-color: white;
   margin: auto;
@@ -102,22 +102,6 @@ button.loginButton {
    top:40%;
 } */
 
-.popup{
-  background: white;
-  position: fixed;
-  top: 50;
-  left: 250;
-  z-index: 1;
-  width: 65%;
-  height: 65%;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
-  padding: 50;
-  border: 1px solid #dbe2e8;
-  border-radius: 20px;
-  box-shadow: 10px 10px 60px 0 rgba(0, 0, 0, 0.05);
-}
 .imgBox{
   width:100%;
   max-height: 300px;
@@ -428,11 +412,17 @@ select.filter-buttons {
 }
 .fa-heart{
   float: right;
-  margin-right: 15px;
-  font-size: 18px;
-  border: 1px solid;
+  border: 0.01em solid;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  padding: 8px;
+  text-align: center;
+  line-height: 52px;
+  vertical-align: middle;
+  font-size: 32px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
 }
 .singlebox-img-wrapper {
   min-height: 200px;
@@ -442,6 +432,66 @@ select.filter-buttons {
   width: 100%;
 }
 .singlebox-btn-wrapper {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  display: flex;
+  justify-content: center;
   height: 40px;
   width: 100%;
+}
+#popup-container {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0,0,0,0.25);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#popup {
+  display: table;
+  width: 75%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  padding: 40px;
+}
+#detail-left {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  background: white;
+  vertical-align: middle;
+}
+#detail-right {
+  display: table-cell;
+  max-width: 340px;
+  min-width: 340px;
+  background: white;
+  vertical-align: middle;
+}
+#detail-table{
+  font-size: 26px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 900;
+}
+#detail-table td {
+  padding: 10px 20px 0;
+
+}
+.innerImgBox {
+  width:100%;
+}
+.modal-dial {
+  border-radius: 20px;
+      -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    border: 0;
+    -webkit-border-radius: .125rem;
+    border-radius: .125rem;
 }
