@@ -17,11 +17,12 @@ const mapDispatchToProps = dispatch => ({
 
 class MainContainer extends Component {
   render() {
+    const { loggedInUser } = this.props;
     return (
-      <div className="MainContainer" >
+      <div className="MainContainer">
         {/* <Navigation /> */}
-        <PostCreator />
-        <PostsList />
+        <PostCreator loggedInUser={loggedInUser} />
+        <PostsList loggedInUser={loggedInUser} />
       </div>
     );
   }

@@ -15,7 +15,6 @@ import * as actions from '../actions/actions';
 //   },
 // });
 class SingleBox extends Component {
-
   render() {
     const { imgurl, user, title, price, key, showPopup } = this.props.content;
     const { togglePopup } = this.props;
