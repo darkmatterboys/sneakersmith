@@ -112,9 +112,6 @@ h4{
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.innerImgBox{
-  max-width: 350px;
-}
 
 .lists-containers {
   width: 100%;
