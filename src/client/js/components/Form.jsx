@@ -4,8 +4,8 @@ class Form extends Component {
   // where should these functions go
 
   render() {
-    const { brand, condition, price, size, title, userId, imgUrl, createNewListing, updatePrice, updateSelectedBrand, updateSelectedCondition, updateSelectedSize, updateTitle, uploadImage, toggleForm } = this.props;
-    const postData = { brand, condition, price, size, title, userId, imgUrl };
+    const { brand, condition, price, size, title, userId, imgUrl, createNewListing, updatePrice, updateSelectedBrand, updateSelectedCondition, updateSelectedSize, updateTitle, uploadImage, toggleForm, loggedInUser } = this.props;
+    const postData = { brand, condition, price, size, title, imgUrl, userId: loggedInUser.uid };
     // console.log('this is brand', imgUrl);
     return (
       <div className="formBackground">
@@ -61,8 +61,9 @@ class Form extends Component {
               console.log('handleimage');
               uploadImage(event)}} />
             <br />
-            <button className="formInput" id="submitInput" type="submit" onClick={() => {
+            <button className="formInput" id="submitInput" type="button" onClick={() => {
               console.log('POST DATA =>>>>>>>>>>>>>>>', postData);
+              // event.preventDefault();
               createNewListing(postData)}}>Submit</button>
             <button className="formInput" id="closeInput" type="button" onClick={toggleForm}>Close</button>
           </form>
