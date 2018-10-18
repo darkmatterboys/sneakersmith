@@ -136,7 +136,7 @@ export const createNewListing = (postData) => {
         price,
         size,
         title,
-        userId: 2,
+        userId,
       }),
     })
       .then((res) => {

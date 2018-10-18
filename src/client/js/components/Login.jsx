@@ -37,7 +37,9 @@ class Login extends Component {
     })
       .then(response => response.json())
       .then((data) => {
+        console.log('validateUser =>>>>>>>>>>>', data);
         this.props.updateLoggedInStatus(data.username, data.email);
+        this.props.updateLoggedInUser(data);
       })
       .catch((err) => {
         console.log(err);

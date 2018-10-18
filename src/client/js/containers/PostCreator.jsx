@@ -51,7 +51,7 @@ const mapDispatchToProps = dispatch => ({
 
 class PostCreator extends Component {
   render() {
-    const { formToggleState, createNewListing, toggleForm, updateSelectedBrand, updateSelectedSize, updateSelectedCondition, updateTitle, updatePrice, updateUrl, uploadImage, brand, condition, userId, imgUrl, title, price, size } = this.props;
+    const { formToggleState, createNewListing, toggleForm, updateSelectedBrand, updateSelectedSize, updateSelectedCondition, updateTitle, updatePrice, updateUrl, uploadImage, brand, condition, userId, imgUrl, title, price, size, loggedInUser } = this.props;
     return (
       <div>
         <div id="banner">
@@ -98,6 +98,7 @@ class PostCreator extends Component {
                 title={title}
                 userId={userId}
                 imgUrl={imgUrl}
+                loggedInUser={loggedInUser}
               />
             ) : null
           }
